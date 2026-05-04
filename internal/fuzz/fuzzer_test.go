@@ -143,12 +143,12 @@ func TestCoverageStats(t *testing.T) {
 func TestFuzzingStats(t *testing.T) {
 	start := time.Now()
 	stats := &FuzzingStats{
-		StartTime:       start,
-		EndTime:         start.Add(2 * time.Second),
-		ExecutionCount:  100,
-		CrashCount:      5,
+		StartTime:        start,
+		EndTime:          start.Add(2 * time.Second),
+		ExecutionCount:   100,
+		CrashCount:       5,
 		NewCoverageCount: 10,
-		CorpusSize:      20,
+		CorpusSize:       20,
 	}
 
 	duration := stats.Duration()
@@ -279,20 +279,20 @@ func TestContextCancellation(t *testing.T) {
 // TestCoverageStatisticsString tests the String method
 func TestCoverageStatisticsString(t *testing.T) {
 	stats := CoverageStatistics{
-		CorpusSize:               50,
-		UniqueCoverageCount:      25,
-		CrashCount:               3,
-		ExecutionCount:           1000,
-		MaxCoverage:              500,
-		AvgCoverage:              250,
+		CorpusSize:                50,
+		UniqueCoverageCount:       25,
+		CrashCount:                3,
+		ExecutionCount:            1000,
+		MaxCoverage:               500,
+		AvgCoverage:               250,
 		TimeSinceLastCoverageGrow: 30 * time.Second,
 	}
 
 	str := stats.String()
 	assert.Contains(t, str, "CoverageStats")
-	assert.Contains(t, str, "50")  // corpus_size
-	assert.Contains(t, str, "25")  // unique_coverage
-	assert.Contains(t, str, "3")   // crashes
+	assert.Contains(t, str, "50") // corpus_size
+	assert.Contains(t, str, "25") // unique_coverage
+	assert.Contains(t, str, "3")  // crashes
 }
 
 // BenchmarkMutation benchmarks the mutation performance

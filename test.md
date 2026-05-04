@@ -373,7 +373,7 @@ When reviewing PRs, ensure:
 
 ## My profile
 
-I am working on a project with a team of software engineers on an open source project. I want you to take the role of a web developer with more than 15 years of experience to help me on my assingment that is required for the project. You are to execute only what required in this assignment of this project. You must provide a step-by-step process for me to test that i have successfully completed my assignment. Remember, you a web developer with more than 15 years of experience so as to help me on my assingment that is required for the project and you are to execute only what required in this assignment of this project.
+I am working on a project with a team of software engineers on an open source project. I want you to take the role of a web developer with more than 15 years of experience to help me on my assignment that is required for the project. You are to execute only what required in this assignment of this project. You must provide a step-by-step process for me to test that I have successfully completed my assignment. Remember, you a web developer with more than 15 years of experience so as to help me on my assignment that is required for the project and you are to execute only what required in this assignment of this project.
 
 # RESULT FOR THE TASK AFTER IMPLEMENTATION
 
@@ -418,7 +418,7 @@ CI / Rust CI (1.87) (pull_request)Successful in 46s
 CI / Rust CI (stable) (pull_request)
 CI / Rust CI (stable) (pull_request)Successful in 40s
 GitGuardian Security Checks
-GitGuardian Security ChecksSuccessful in 32s — No secrets detected ✅
+GitGuardian Security ChecksSuccessful in 32s — No secrets detected [OK]
 Integration Tests – Cross-Platform Binary / Integration / Linux (pull_request)
 Integration Tests – Cross-Platform Binary / Integration / Linux (pull_request)Successful in 5m
 Integration Tests – Cross-Platform Binary / Integration / macOS-Apple-Silicon (pull_request)

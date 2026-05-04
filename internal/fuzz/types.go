@@ -10,14 +10,14 @@ import (
 
 // FuzzingStats represents statistics from a fuzzing run
 type FuzzingStats struct {
-	StartTime           time.Time
-	EndTime             time.Time
-	ExecutionCount      uint64
-	CrashCount          uint64
-	NewCoverageCount    uint64
-	CorpusSize          int
-	CoverageEntryCount  int
-	UniqueInputsCount   int
+	StartTime          time.Time
+	EndTime            time.Time
+	ExecutionCount     uint64
+	CrashCount         uint64
+	NewCoverageCount   uint64
+	CorpusSize         int
+	CoverageEntryCount int
+	UniqueInputsCount  int
 }
 
 // Duration returns the total execution time
@@ -39,12 +39,12 @@ func (s *FuzzingStats) ExecutionsPerSecond() float64 {
 
 // CoverageStatistics represents aggregate coverage statistics
 type CoverageStatistics struct {
-	CorpusSize               int
-	UniqueCoverageCount      int
-	CrashCount               int
-	ExecutionCount           uint64
-	MaxCoverage              uint32
-	AvgCoverage              uint32
+	CorpusSize                int
+	UniqueCoverageCount       int
+	CrashCount                int
+	ExecutionCount            uint64
+	MaxCoverage               uint32
+	AvgCoverage               uint32
 	TimeSinceLastCoverageGrow time.Duration
 }
 

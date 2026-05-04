@@ -21,30 +21,30 @@ import (
 
 // CoverageMap represents the code coverage feedback from a single execution
 type CoverageMap struct {
-	coveredLines map[string]bool
+	coveredLines  map[string]bool
 	totalCoverage uint32
-	timestamp    time.Time
+	timestamp     time.Time
 }
 
 // CorpusEntry represents a single test case in the fuzzing corpus
 type CorpusEntry struct {
-	Input     *simulator.FuzzerInput
-	Coverage  *CoverageMap
-	ResultIdx int
+	Input       *simulator.FuzzerInput
+	Coverage    *CoverageMap
+	ResultIdx   int
 	NewCoverage bool
-	Timestamp time.Time
+	Timestamp   time.Time
 }
 
 // CoverageGuidedFuzzer implements a coverage-guided fuzzer for Stellar contracts
 type CoverageGuidedFuzzer struct {
-	runner         simulator.RunnerInterface
-	config         FuzzerConfig
-	corpus          []*CorpusEntry
-	crashingInputs  []*simulator.FuzzerInput
-	coverageMap     map[string]uint32 // Maps coverage signature to count
-	seedRng         *rand.Rand
-	mu              sync.RWMutex
-	executionCount  uint64
+	runner           simulator.RunnerInterface
+	config           FuzzerConfig
+	corpus           []*CorpusEntry
+	crashingInputs   []*simulator.FuzzerInput
+	coverageMap      map[string]uint32 // Maps coverage signature to count
+	seedRng          *rand.Rand
+	mu               sync.RWMutex
+	executionCount   uint64
 	lastCoverageGrow time.Time
 }
 
@@ -568,7 +568,7 @@ func (f *CoverageGuidedFuzzer) logProgress(iteration uint64) {
 func (f *CoverageGuidedFuzzer) GetCrashingInputs() []*simulator.FuzzerInput {
 	f.mu.RLock()
 	defer f.mu.RUnlock()
-	
+
 	result := make([]*simulator.FuzzerInput, len(f.crashingInputs))
 	copy(result, f.crashingInputs)
 	return result
@@ -578,7 +578,7 @@ func (f *CoverageGuidedFuzzer) GetCrashingInputs() []*simulator.FuzzerInput {
 func (f *CoverageGuidedFuzzer) GetCorpus() []*CorpusEntry {
 	f.mu.RLock()
 	defer f.mu.RUnlock()
-	
+
 	result := make([]*CorpusEntry, len(f.corpus))
 	copy(result, f.corpus)
 	return result
@@ -588,7 +588,7 @@ func (f *CoverageGuidedFuzzer) GetCorpus() []*CorpusEntry {
 func (f *CoverageGuidedFuzzer) GetCoverageMap() map[string]uint32 {
 	f.mu.RLock()
 	defer f.mu.RUnlock()
-	
+
 	result := make(map[string]uint32)
 	for k, v := range f.coverageMap {
 		result[k] = v
@@ -638,7 +638,7 @@ func (cm *CoverageMap) computeSignature() string {
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)
-	
+
 	sig := ""
 	for _, k := range keys {
 		sig += k + ","
